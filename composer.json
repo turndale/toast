@@ -1,0 +1,44 @@
+{
+  "name": "turndale/toast",
+  "description": "A Laravel Package for Flux Toast integration",
+  "keywords": [
+    "laravel",
+    "flux",
+    "toast",
+    "alert",
+    "turndale"
+  ],
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "Turndale\\Toast\\": "src/"
+    },
+    "files": [
+      "src/helpers.php"
+    ]
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Turndale\\Toast\\Tests\\": "tests/"
+    }
+  },
+  "require": {
+    "php": "^8.2",
+    "illuminate/support": "^12.0",
+    "livewire/livewire": "^3.0",
+    "livewire/flux": "^2.0"
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Turndale\\Toast\\ToastServiceProvider"
+      ]
+    }
+  },
+  "minimum-stability": "stable",
+  "prefer-stable": true,
+  "require-dev": {
+    "phpunit/phpunit": "^12.5",
+    "orchestra/testbench": "^10.9"
+  }
+}
