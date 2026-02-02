@@ -51,7 +51,7 @@ session()->flash('toast', [
     'text' => 'Your changes have been saved.',
     'heading' => 'Success', // Optional, defaults to ''
     'variant' => 'success', // Optional, defaults to 'success'
-    'duration' => 6000,
+    'duration' => 6000, // Optional, defaults to 6000
 ]);
 ```
 
