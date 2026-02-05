@@ -27,7 +27,7 @@
     }
     elseif (session()->has('info')) {
         $toastData = [
-            'variant' => 'info',
+            'variant' => 'warning',
             'text' => session('info'),
         ];
     }

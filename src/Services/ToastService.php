@@ -88,7 +88,7 @@ class ToastService
     public function flashInfo(string $message = '', string $title = '', int $duration = 6000): void
     {
         session()->flash('toast', [
-            'variant' => 'info',
+            'variant' => 'warning',
             'text' => $message,
             'heading' => $title,
             'duration' => $duration,

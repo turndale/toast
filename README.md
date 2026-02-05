@@ -290,7 +290,7 @@ For more control over the toast (custom heading, duration, variant), use the arr
 session()->flash('toast', [
     'text' => 'Your changes have been saved.',
     'heading' => 'Success',        // Optional, defaults to ''
-    'variant' => 'success',        // Optional: 'success', 'danger', 'warning', 'info'
+    'variant' => 'success',        // Optional: 'success', 'danger', 'warning'
     'duration' => 6000,            // Optional, defaults to 6000
 ]);
 
@@ -350,8 +350,9 @@ session(['info' => 'Background sync in progress.']);
 | Default | `alert()` | - |
 | Success | `success()`, `flashSuccess()` | `success` |
 | Error/Danger | `error()`, `flashError()` | `error` |
-| Warning | `warning()`, `flashWarning()` | `warning` |
-| Info | `flashInfo()` | `info` |
+| Warning | `warning()`, `flashWarning()`, `flashInfo()` | `warning`, `info` |
+
+> **Note:** Flux only supports `success`, `warning`, and `danger` variants. The `info` methods and session key are provided for convenience and map to the `warning` variant.
 
 ---
 

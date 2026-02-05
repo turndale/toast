@@ -102,7 +102,7 @@ class ToastTest extends TestCase
         
         $this->assertEquals('Flash info', $toast['text']);
         $this->assertEquals('Info Title', $toast['heading']);
-        $this->assertEquals('info', $toast['variant']);
+        $this->assertEquals('warning', $toast['variant']); // info maps to warning
         $this->assertEquals(6000, $toast['duration']);
     }
 
