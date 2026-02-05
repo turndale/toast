@@ -84,4 +84,67 @@ class ToastService
             'duration' => $duration,
         ]);
     }
+
+    public function flashInfo(string $message = '', string $title = '', int $duration = 6000): void
+    {
+        session()->flash('toast', [
+            'variant' => 'info',
+            'text' => $message,
+            'heading' => $title,
+            'duration' => $duration,
+        ]);
+    }
+
+    /**
+     * Simple flash helpers using Laravel's familiar session patterns.
+     * These use the simple session keys: 'success', 'error', 'warning', 'info'
+     */
+    public function simpleFlash(string $type, string $message): void
+    {
+        session()->flash($type, $message);
+    }
+
+    public function simpleFlashSuccess(string $message): void
+    {
+        session()->flash('success', $message);
+    }
+
+    public function simpleFlashError(string $message): void
+    {
+        session()->flash('error', $message);
+    }
+
+    public function simpleFlashWarning(string $message): void
+    {
+        session()->flash('warning', $message);
+    }
+
+    public function simpleFlashInfo(string $message): void
+    {
+        session()->flash('info', $message);
+    }
+
+    /**
+     * Same-page session alerts (non-flash, for current request).
+     * These persist in session until manually cleared or page refresh.
+     */
+    public function sessionSuccess(string $message): void
+    {
+        session(['success' => $message]);
+    }
+
+    public function sessionError(string $message): void
+    {
+        session(['error' => $message]);
+    }
+
+    public function sessionWarning(string $message): void
+    {
+        session(['warning' => $message]);
+    }
+
+    public function sessionInfo(string $message): void
+    {
+        session(['info' => $message]);
+    }
 }
