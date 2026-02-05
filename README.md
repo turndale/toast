@@ -63,16 +63,18 @@ session()->flash('toast', [
 ]);
 ```
 
-To display these flash messages, you must include the package's view in your layout file (e.g., `resources/views/components/layouts/app.blade.php`), typically near where you include `<flux:toast />`.
+To display these flash messages, you must include the package's view in your layout file (e.g., `resources/views/components/layouts/app.blade.php`).
+
+**Important:** The `@include('toast::partials.toast')` must be placed **after** `@fluxScripts` because it uses the `$flux.toast()` function which is only available after Flux scripts are loaded.
 
 ```blade
 <body>
     <!-- ... -->
 
     <flux:toast />
-    @include('toast::partials.toast')
 
     @fluxScripts
+    @include('toast::partials.toast')
 </body>
 ```
 
